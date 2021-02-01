@@ -22,3 +22,8 @@
       with offers - kotlin/order/app/OrderServiceAppWithOffer.kt
 
 
+   
+ ### Sample Outputs
+Running OrderServiceApp.kt with command line arguments - [Apple, Apple, Orange, Apple]
+
+
