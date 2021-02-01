@@ -15,16 +15,22 @@ class CartItem @JvmOverloads constructor(var product: Product?, var quantity: In
 
         return quantity
     }
+
+    /**
+     * Adds one item to the cart.
+     * @param
+     * @return quantity.
+     */
     @Throws(OutOfStockException::class)
     fun addOne(): Int {
-        println(product?.productCode)
+
         if (product?.productCode.equals(APPLE) && (quantity + 1 < APPLE_MAX_LIMIT))
             return quantity++
         else if (product?.productCode.equals(ORANGE) && (quantity + 1 < ORANGE_MAX_LIMIT))
             return quantity++
         else
             println("Out of Stock")
-            throw OutOfStockException("Out of Stock")
+        throw OutOfStockException("Out of Stock")
 
 
     }

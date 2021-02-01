@@ -29,21 +29,24 @@ class Basket {
     private val discount = Discount()
 
     init {
-        //initialize apple and add offer
-        println("Initializing offers, Pls wait...")
 
         val appleProduct = Product(Constants.APPLE, Price(BigDecimal(0.60)))
 
-        val appleOffer = Offer(appleProduct, 1, DiscountType.TWO_FOR_ONE.discount)
+        val appleOffer = Offer(appleProduct, 2, DiscountType.TWO_FOR_ONE.discount)
 
         offerMap.put(Constants.APPLE, appleOffer)
 
         //initialize orange and add offer
         val orangeProduct = Product(Constants.ORANGE, Price(BigDecimal(0.25)))
-        val orangeOffer = Offer(orangeProduct, 1, DiscountType.THREE_FOR_TWO.discount)
+        val orangeOffer = Offer(orangeProduct, 3, DiscountType.THREE_FOR_TWO.discount)
         offerMap.put(Constants.ORANGE, orangeOffer)
     }
 
+    /**
+     * Adds cartItem to the cart.
+     * @param [cartItem] to this cart
+     * @return void.
+     */
     @Throws(OutOfStockException::class)
     fun addCartItem(cartItem: CartItem) {
 
@@ -58,10 +61,7 @@ class Basket {
             cartItem.addOne()
         } else {
             if (cartItem?.product?.productCode.equals(Constants.APPLE) && (cartItem.quantity + 1 < Constants.APPLE_MAX_LIMIT)) {
-
                 cartItemList.add(cartItem)
-
-
             } else if (cartItem?.product?.productCode.equals(Constants.ORANGE) && (cartItem?.quantity + 1 < Constants.ORANGE_MAX_LIMIT)) {
                 cartItemList.add(cartItem)
 
@@ -69,9 +69,8 @@ class Basket {
                 println("Out of Stock")
                 throw OutOfStockException("Out of Stock")
             }
-            refreshTotal()
-
         }
+        refreshTotal()
 
     }
 
@@ -100,14 +99,17 @@ class Basket {
         return isLineItemReduced
     }
 
-    private fun refreshTotal() {
-        cartItemList.forEach(Consumer { item: CartItem ->
-            totalPriceBeforeDiscount = totalPriceBeforeDiscount.add(item.getLineItemTotalBeforeDiscount())
-        })
-
+    fun refreshTotalDiscount() {
         totalDiscount = discount.calculateDiscount(offerMap, cartItemList)
 
         totalPriceAfterDiscount = totalPriceBeforeDiscount!!.subtract(totalDiscount)
+    }
+
+    private fun refreshTotal() {
+        totalPriceBeforeDiscount = BigDecimal(0)
+        cartItemList.forEach(Consumer { item: CartItem ->
+            totalPriceBeforeDiscount = totalPriceBeforeDiscount.add(item.getLineItemTotalBeforeDiscount())
+        })
     }
 
     val cartItems: List<CartItem>

@@ -12,7 +12,7 @@ import java.util.*
 import kotlin.system.exitProcess
 
 
-object OrderServiceApp {
+object OrderServiceAppWithOffer {
 
     private val basket = Basket()
     private val myProducer = CustomerNotificationProducer()
@@ -31,7 +31,7 @@ object OrderServiceApp {
         val orderedItems = Arrays.asList(*args)
 
         println("orderedItems::${orderedItems}")
-        basket.offerMap = Collections.emptyMap()
+
 
         try {
 
@@ -43,6 +43,8 @@ object OrderServiceApp {
             val totalDiscount = NumberFormat.getCurrencyInstance().format(basket.totalDiscount)
 
             println("totalPrice::${totalPriceBeforeDiscount}")
+            println("totalDiscount::${totalPriceAfterDiscount}")
+            println("totalPriceAfterDiscount::${totalDiscount}")
 
             myProducer.sendMessage("Order Successfully Placed")
             println("Order Successfully Placed")

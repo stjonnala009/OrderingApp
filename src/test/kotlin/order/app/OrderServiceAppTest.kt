@@ -11,7 +11,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import java.math.BigDecimal
-import java.util.HashMap
+import java.util.*
 
 
 class OrderServiceAppTest {
@@ -40,36 +40,8 @@ class OrderServiceAppTest {
 
     @Test
     fun testAddMultipleQuantityofProductWithRemovingOneUnit() {
-        val Item_1 = CartItem(apple,1)
-        val Item_2 = CartItem(apple,1)
-        val Item_3 = CartItem(apple, 1)
-        val Item_4 = CartItem(orange, 1)
-        basket.addCartItem(Item_1)
-        basket.addCartItem(Item_2)
-        basket.addCartItem(Item_3)
-        basket.addCartItem(Item_4)
-
-        Assert.assertTrue(2 == basket.totalLineItem)
-        Assert.assertTrue(3 == basket.cartItems.get(0).getQuantity())
-        println(basket.totalDiscount)
-      // Assert.assertTrue(BigDecimal(1.34) == basket.totalPriceBeforeDiscount)
-//        Assert.assertTrue(BigDecimal(40) == basket.totalPriceAfterDiscount)
-//        Assert.assertTrue(BigDecimal(0.0) == basket.totalDiscount)
-        basket.decreaseByOne(Item_4)
-        Assert.assertTrue(1 == basket.totalLineItem)
-        Assert.assertTrue(3 == basket.cartItems.get(0).getQuantity())
-//        Assert.assertTrue(BigDecimal(30) == basket.totalPriceBeforeDiscount)
-//        Assert.assertTrue(BigDecimal(30) == basket.totalPriceAfterDiscount)
-//        Assert.assertTrue(BigDecimal(0.0) == basket.totalDiscount)
-
-
-    }
-
-
-    @Test
-    fun testAddMultipleQuantityofProductWithRemovingOneUnit() {
-        val Item_1 = CartItem(apple,1)
-        val Item_2 = CartItem(apple,1)
+        val Item_1 = CartItem(apple, 1)
+        val Item_2 = CartItem(apple, 1)
         val Item_3 = CartItem(apple, 1)
         val Item_4 = CartItem(orange, 1)
         basket.addCartItem(Item_1)
@@ -92,7 +64,6 @@ class OrderServiceAppTest {
 
 
     }
-
 
 
 

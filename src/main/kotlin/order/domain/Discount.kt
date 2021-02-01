@@ -40,7 +40,7 @@ class Discount {
     ): BigDecimal {
         var totalDiscount = BigDecimal(0)
         //apply discount if the offer matches with line item
-        if(offerMap.isEmpty()) {
+        if (offerMap.isEmpty()) {
             return totalDiscount
         }
         for (item in set) {
@@ -49,7 +49,7 @@ class Discount {
 
             var itemQuantity = item.getQuantity()!!
 
-            if (offerItemQuantity >= itemQuantity) {
+            if (offerItemQuantity <= itemQuantity) {
                 //case when cart item quantity is more than offer
                 // eg. when cart item are 3 and offer is 2 For 1
                 val mod: Int = item.quantity % offerItemQuantity
