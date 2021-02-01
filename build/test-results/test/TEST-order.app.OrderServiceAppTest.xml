@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="order.app.OrderServiceAppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-31T20:02:44" hostname="Saitejas-MacBook-Pro.local" time="0.011">
+<testsuite name="order.app.OrderServiceAppTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-02-01T12:54:46" hostname="Saitejas-MacBook-Pro.local" time="0.014">
   <properties/>
-  <testcase name="testAddMultipleQuantityofProductWithRemovingOneUnit" classname="order.app.OrderServiceAppTest" time="0.011"/>
-  <system-out><![CDATA[Initializing offers, Pls wait...
-Apple
-Apple
-0.40199999999999997579713806317158776389147566981278205513124731121897548202781536019756458699703216552734375
-]]></system-out>
+  <testcase name="testAddMultipleQuantityofProductWithRemovingOneUnit" classname="order.app.OrderServiceAppTest" time="0.008"/>
+  <testcase name="testAddOrangeProductsWithBuy3InGet2Price" classname="order.app.OrderServiceAppTest" time="0.002"/>
+  <testcase name="testAddOrangesVerifyTotalWithoutOffer" classname="order.app.OrderServiceAppTest" time="0.0"/>
+  <testcase name="testAddApplesVerifyTotalWithoutOffer" classname="order.app.OrderServiceAppTest" time="0.0"/>
+  <testcase name="testAddAppleProductsWithBuyOneGetOne" classname="order.app.OrderServiceAppTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
