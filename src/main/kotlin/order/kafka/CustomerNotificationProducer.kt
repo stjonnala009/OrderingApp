@@ -27,13 +27,13 @@ class CustomerNotificationProducer {
         return KafkaProducer<String, String>(props)
     }
 
-    fun sendMessage(message: String) {
-
-        var producer = createProducer()
+    fun sendMessage(message: String, producer: Producer<String, String>) {
+        val outputTopic = "order-submitted"
         var producerRecord: ProducerRecord<String, String> = ProducerRecord("order-submitted", message)
 
         var future: Future<RecordMetadata> = producer?.send(producerRecord)!!
-
+        producer.flush()
         println(" message sent to " + future.get().topic())
+
     }
 }

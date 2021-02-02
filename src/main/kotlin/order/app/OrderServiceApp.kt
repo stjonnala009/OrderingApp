@@ -31,6 +31,7 @@ object OrderServiceApp {
 
         println("orderedItems::${orderedItems}")
         basket.offerMap = Collections.emptyMap()
+        var producer = myProducer.createProducer()
 
         try {
 
@@ -41,17 +42,23 @@ object OrderServiceApp {
 
             println("totalPrice::${totalPriceBeforeDiscount}")
 
-            myProducer.sendMessage("Order Successfully Placed")
             println("Order Successfully Placed")
+
+            myProducer.sendMessage("Order Successfully Placed", producer)
+
+
         } catch (e: OutOfStockException) {
-            myProducer.sendMessage("Order Failed: Out of stock")
+            myProducer.sendMessage("Order Failed: Out of stock", producer)
             println("Order Failed: Out of stock")
         } catch (e: Exception) {
-            myProducer.sendMessage("Order Failed: Internal error")
+            myProducer.sendMessage("Order Failed: Internal error", producer)
             println("Order Failed: Internal error")
+        } finally {
+            producer.close()
+            println("OrderServiceApp Completed.")
         }
 
-        println("OrderServiceAppWithOffer Completed.")
+
     }
 
     /**
