@@ -28,21 +28,21 @@
 
    
   ### Sample Outputs
- #####1.Running OrderServiceApp.kt with command line arguments - [Apple, Apple, Orange, Apple] <br/>
+ ##### 1.Running OrderServiceApp.kt with command line arguments - [Apple, Apple, Orange, Apple] <br/>
  &nbsp; &nbsp; &nbsp; OrderServiceApp.kt output <br/>
           ![Alt text](src/main/resources/Outputs/1.png?raw=true "Optional Title") <br/>
  
  &nbsp; &nbsp; &nbsp; Order notification sent via MailService console <br/>
           ![Alt text](src/main/resources/Outputs/2.png?raw=true "Optional Title") <br/>
 
- #####2.Running OrderServiceAppWithOffer.kt with command line arguments - [Apple, Apple, Orange, Orange, Orange] <br/>
+ ##### 2.Running OrderServiceAppWithOffer.kt with command line arguments - [Apple, Apple, Orange, Orange, Orange] <br/>
  &nbsp; &nbsp; &nbsp; OrderServiceAppWithOffer.kt output <br/>
           ![Alt text](src/main/resources/Outputs/3.png?raw=true "Optional Title") <br/>
 
 &nbsp; &nbsp; &nbsp; Order with offer notification sent via MailService console <br/>
           ![Alt text](src/main/resources/Outputs/4.png?raw=true "Optional Title") <br/>
 
- #####3.Running OrderServiceAppWithOffer.kt with command line arguments with exceeded stock limit- [Apple, Apple, Orange, Orange, Orange, Orange, Orange] <br/>
+ ##### 3.Running OrderServiceAppWithOffer.kt with command line arguments with exceeded stock limit- [Apple, Apple, Orange, Orange, Orange, Orange, Orange] <br/>
 &nbsp; &nbsp; &nbsp; OrderServiceAppWithOffer.kt output <br/>
          ![Alt text](src/main/resources/Outputs/5.png?raw=true "Optional Title") <br/>
 
