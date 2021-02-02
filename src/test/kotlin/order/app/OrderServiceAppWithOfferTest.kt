@@ -11,7 +11,7 @@ import org.junit.Assert
 import org.junit.Test
 import java.math.BigDecimal
 import java.text.NumberFormat
-import java.util.HashMap
+import java.util.*
 
 class OrderServiceAppWithOfferTest {
     private var basket = Basket()
@@ -79,7 +79,6 @@ class OrderServiceAppWithOfferTest {
         Assert.assertTrue("$0.50" == totalPriceAfterDiscount)
 
     }
-
 
 
 }

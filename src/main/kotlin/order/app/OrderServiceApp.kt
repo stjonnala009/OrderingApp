@@ -16,13 +16,12 @@ object OrderServiceApp {
 
     private val basket = Basket()
     private val myProducer = CustomerNotificationProducer()
-    private val orderServiceProducer = order.producer.OrderServiceProducer()
 
     @JvmStatic
     fun main(args: Array<String>) {
 
         if (args.size <= 2) {
-            println("Please provide command line arguments: Apple Apple Orange Apple")
+            println("Please provide command line arguments")
             exitProcess(1)
         }
 
@@ -39,8 +38,6 @@ object OrderServiceApp {
 
             val totalPriceBeforeDiscount = NumberFormat.getCurrencyInstance().format(basket.totalPriceBeforeDiscount)
 
-            val totalPriceAfterDiscount = NumberFormat.getCurrencyInstance().format(basket.totalPriceAfterDiscount)
-            val totalDiscount = NumberFormat.getCurrencyInstance().format(basket.totalDiscount)
 
             println("totalPrice::${totalPriceBeforeDiscount}")
 

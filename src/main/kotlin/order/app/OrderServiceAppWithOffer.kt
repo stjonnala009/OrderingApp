@@ -16,13 +16,12 @@ object OrderServiceAppWithOffer {
 
     private val basket = Basket()
     private val myProducer = CustomerNotificationProducer()
-    private val orderServiceProducer = order.producer.OrderServiceProducer()
 
     @JvmStatic
     fun main(args: Array<String>) {
 
         if (args.size <= 2) {
-            println("Please provide command line arguments: Apple Apple Orange Apple")
+            println("Please provide command line arguments")
             exitProcess(1)
         }
 

@@ -14,9 +14,9 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-    compile("org.apache.kafka:kafka-clients:2.1.0")
-    compile("org.apache.kafka:kafka-streams:2.1.0")
-    compile("org.apache.kafka:connect-runtime:2.1.0")
+    compile("org.apache.kafka:kafka-clients:2.7.0")
+    compile("org.apache.kafka:kafka-streams:2.7.0")
+    compile("org.apache.kafka:connect-runtime:2.7.0")
 //    compile("io.confluent:kafka-json-serializer:5.0.1")
     compile("com.google.code.gson:gson:2.2.4")
     compile("com.fasterxml.jackson.core:jackson-databind:[2.8.11.1,)")

@@ -12,10 +12,6 @@ import java.util.concurrent.Future
 class CustomerNotificationProducer {
 
     fun createProducer(): Producer<String, String> {
-//        val props = Properties()
-//        props["bootstrap.servers"] = "localhost:9092"
-//        props["key.serializer"] = StringSerializer::class.java.canonicalName
-//        props["value.serializer"] = StringSerializer::class.java.canonicalName
 
         val props = Properties()
         props["bootstrap.servers"] = "localhost:9092"
@@ -32,7 +28,6 @@ class CustomerNotificationProducer {
     }
 
     fun sendMessage(message: String) {
-        val outputTopic = "order-submitted"
 
         var producer = createProducer()
         var producerRecord: ProducerRecord<String, String> = ProducerRecord("order-submitted", message)
